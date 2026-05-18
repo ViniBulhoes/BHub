@@ -64,17 +64,6 @@ O BHub foi desenvolvido para funcionar em diferentes dispositivos, proporcionand
 
 ---
 
-## 🔮 Futuras Implementações
-
-- Sistema de busca
-- Área de autenticação
-- Integração com APIs
-- Dashboard de progresso
-- Sistema de categorias e filtros
-- Modo escuro
-
----
-
 ## 📌 Status do Projeto
 
 🚧 Em desenvolvimento
