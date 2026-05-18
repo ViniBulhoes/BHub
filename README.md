@@ -73,6 +73,3 @@ O BHub foi desenvolvido para funcionar em diferentes dispositivos, proporcionand
 ## 👨‍💻 Autor
 
 Desenvolvido por Vinicius Bulhões.
-
-GitHub:  
-:contentReference[oaicite:1]{index=1}
