@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BHub | JavaScript</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="bg-gradient-sphere"></div>
+    <div class="bg-gradient-sphere two"></div>
+
+    <header>
+        <div class="logo">B<span class="gradient-text">Hub</span></div>
+    </header>
+
+    <main>
+        <a href="../index.html#studies" class="btn-back">
+            <i class="fa-solid fa-arrow-left"></i> Voltar para os Estudos
+        </a>
+
+        <div class="note-content">
+            <h1>JavaScript</h1>
+            <p>Anotações principais sobre os mecanismos por trás do JS.</p>
+
+            <h2>1. Closures</h2>
+            <p>Uma closure é a combinação de uma função com as referências ao estado que a circunda (o ambiente léxico).
+                Em outras palavras, uma closure dá acesso ao escopo de uma função externa a partir de uma função
+                interna.</p>
+
+            <h2>2. Event Loop</h2>
+            <p>O JavaScript tem um modelo de concorrência baseado em um "event loop", que é responsável por executar o
+                código, coletar e processar eventos, e executar subtarefas em fila.</p>
+            <ul>
+                <li><strong>Call Stack:</strong> Onde o código é executado.</li>
+                <li><strong>Web APIs:</strong> Lida com operações assíncronas (setTimeout, fetch).</li>
+                <li><strong>Task Queue:</strong> Fila de callbacks prontos para executar.</li>
+            </ul>
+
+            <h2>3. Promises</h2>
+            <p>Representa a eventual conclusão (ou falha) de uma operação assíncrona e seu valor resultante.</p>
+            <pre><code>const promessa = new Promise((resolve, reject) => {
+    // operação
+    if (sucesso) {
+        resolve("Deu certo!");
+    } else {
+        reject("Deu erro!");
+    }
+});</code></pre>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 BHub. Desenvolvido com foco e cafeína.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

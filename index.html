@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BHub | Meu Ecossistema</title>
+    <meta name="description" content="Meu hub pessoal para projetos e estudos.">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Background Decorators -->
+    <div class="bg-gradient-sphere"></div>
+    <div class="bg-gradient-sphere two"></div>
+
+    <header>
+        <div class="logo">B<span class="gradient-text">Hub</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Início</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#studies">Estudos</a></li>
+                <li><a href="https://vinibulhoes.github.io/portfolio/" target="_blank" rel="noopener noreferrer">Sobre
+                        mim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <h1>Meu próprio <br><span class="gradient-text">Ecossistema</span></h1>
+            <p>Um espaço centralizado para organizar tudo que eu crio, desenvolvo e aprendo. Bem-vindo ao meu Hub
+                pessoal.</p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2 class="section-title">Projetos</h2>
+            <div class="grid-container">
+                <!-- Project Card 1 -->
+                <a href="#home" class="card">
+                    <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3 class="card-title">Projeto BHub</h3>
+                    <p class="card-desc">Uma aplicação web focada em produtividade e organização pessoal com interface
+                        moderna.</p>
+                </a>
+
+                <!-- Project Card 2 -->
+                <a href="#" class="card">
+                    <div class="card-icon"><i class="fa-solid fa-terminal"></i></div>
+                    <h3 class="card-title">CLI Tool</h3>
+                    <p class="card-desc">Ferramenta de linha de comando para automatizar tarefas diárias de
+                        desenvolvimento.</p>
+                </a>
+
+                <!-- Project Card 3 -->
+                <a href="#" class="card">
+                    <div class="card-icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <h3 class="card-title">Design System</h3>
+                    <p class="card-desc">Componentes reutilizáveis de UI construídos com Vanilla CSS e foco em
+                        acessibilidade.</p>
+                </a>
+
+                <!-- Project Card 4: YouTube Downloader -->
+                <a href="https://github.com/ViniBulhoes/YouTube-Downloader" target="_blank" rel="noopener noreferrer"
+                    class="card">
+                    <div class="card-icon"><i class="fa-brands fa-youtube"></i></div>
+                    <h3 class="card-title">YT Downloader</h3>
+                    <p class="card-desc">Aplicação prática para baixar vídeos diretamente do YouTube.
+                    </p>
+                </a>
+
+                <!-- Project Card 5: Todoist Clone -->
+                <a href="https://vinibulhoes.github.io/todoist/" target="_blank" rel="noopener noreferrer" class="card">
+                    <div class="card-icon"><i class="fa-solid fa-list-check"></i></div>
+                    <h3 class="card-title">Todoist App</h3>
+                    <p class="card-desc">Gerenciador de tarefas para organizar o dia a dia, inspirado no Todoist.</p>
+                </a>
+
+                <!-- Project Card 6: SARA -->
+                <a href="https://vitaum42.github.io/SARA/" target="_blank" rel="noopener noreferrer" class="card">
+                    <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h3 class="card-title">Projeto SARA</h3>
+                    <p class="card-desc">Sistema acompanhamento regional de atuação política.
+                    </p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Studies Section -->
+        <section id="studies">
+            <h2 class="section-title">Estudos & Notas</h2>
+            <div class="grid-container">
+                <!-- Study Card 1 -->
+                <a href="notas/javascript.html" class="card study">
+                    <div class="card-icon"><i class="fa-brands fa-js"></i></div>
+                    <h3 class="card-title">JavaScript</h3>
+                    <p class="card-desc">Anotações sobre Closures, Promises, Event Loop e padrões de design em JS.</p>
+                </a>
+
+                <!-- Study Card 2 -->
+                <a href="notas/python.html" class="card study">
+                    <div class="card-icon"><i class="fa-brands fa-python"></i></div>
+                    <h3 class="card-title">Python</h3>
+                    <p class="card-desc">Anotações sobre estruturas de dados, OOP, scripts e automações em Python.</p>
+                </a>
+
+                <!-- Study Card 3 -->
+                <a href="notas/java.html" class="card study">
+                    <div class="card-icon"><i class="fa-brands fa-java"></i></div>
+                    <h3 class="card-title">Java</h3>
+                    <p class="card-desc">Conceitos fundamentais da JVM, Programação Orientada a Objetos e ecossistema.
+                    </p>
+                </a>
+
+                <!-- Study Card 4 -->
+                <a href="notas/mysql.html" class="card study">
+                    <div class="card-icon"><i class="fa-solid fa-database"></i></div>
+                    <h3 class="card-title">MySQL</h3>
+                    <p class="card-desc">Comandos essenciais, joins avançados, otimização de queries e modelagem
+                        relacional.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 BHub. Desenvolvido com foco e cafeína.</p>
+        <p>Sobre mim: <a href="https://vinibulhoes.github.io/portfolio/" target="_blank" rel="noopener noreferrer"
+                style="text-decoration: none; color: inherit;">Clique aqui para saber mais!</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
