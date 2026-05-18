@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
     <div class="bg-gradient-sphere"></div>
     <div class="bg-gradient-sphere two"></div>
@@ -21,35 +23,172 @@
         </a>
 
         <div class="note-content">
-            <h1>MySQL Avançado</h1>
-            <p>Sistema de Gerenciamento de Banco de Dados Relacional. Base fundamental para arquitetura e persistência de dados consistentes.</p>
-            
-            <h2>1. Comandos Essenciais (CRUD)</h2>
-            <pre><code>-- CREATE
-INSERT INTO usuarios (nome, email) VALUES ('Vinícius', 'vini@email.com');
+            <h1>Resumo Estruturado de MySQL</h1>
+            <p>MySQL é um Sistema de Gerenciamento de Banco de Dados Relacional (SGBD) utilizado para armazenar,
+                organizar e consultar dados utilizando SQL.</p>
 
--- READ
-SELECT nome, email FROM usuarios WHERE id = 1;
+            <h2>1. Comandos Básicos</h2>
+            <p>Comandos fundamentais para gerenciamento do banco.</p>
 
--- UPDATE
-UPDATE usuarios SET nome = 'Vini' WHERE id = 1;
+            <pre><code>-- Criar banco de dados
+CREATE DATABASE escola;
 
--- DELETE
-DELETE FROM usuarios WHERE id = 1;</code></pre>
+-- Selecionar banco
+USE escola;
 
-            <h2>2. Joins Relacionais</h2>
-            <p>Usados para combinar linhas de duas ou mais tabelas baseadas em uma coluna comum.</p>
+-- Mostrar bancos existentes
+SHOW DATABASES;
+
+-- Mostrar tabelas
+SHOW TABLES;
+
+-- Excluir banco
+DROP DATABASE escola;</code></pre>
+
+            <h2>2. Como Criar Tabelas</h2>
+            <p>As tabelas armazenam os dados do sistema.</p>
+
+            <pre><code>CREATE TABLE alunos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100),
+    idade INT,
+    email VARCHAR(150)
+);</code></pre>
+
             <ul>
-                <li><strong>INNER JOIN:</strong> Retorna registros que têm valores correspondentes em ambas as tabelas.</li>
-                <li><strong>LEFT JOIN:</strong> Retorna todos os registros da tabela da esquerda e os correspondentes da direita.</li>
+                <li><strong>INT:</strong> números inteiros.</li>
+                <li><strong>VARCHAR:</strong> textos curtos.</li>
+                <li><strong>PRIMARY KEY:</strong> identificador único.</li>
+                <li><strong>AUTO_INCREMENT:</strong> incremento automático.</li>
             </ul>
-            <pre><code>SELECT usuarios.nome, pedidos.total
-FROM usuarios
-INNER JOIN pedidos ON usuarios.id = pedidos.usuario_id;</code></pre>
 
-            <h2>3. Índices (Indexes)</h2>
-            <p>Índices melhoram drasticamente a velocidade das consultas SELECT (mas deixam INSERTs/UPDATEs mais lentos). Use em colunas frequentemente usadas no <code>WHERE</code>.</p>
-            <pre><code>CREATE INDEX idx_email ON usuarios(email);</code></pre>
+            <h2>3. Como Alimentar Tabelas</h2>
+            <p>Inserção, atualização e remoção de dados.</p>
+
+            <pre><code>-- Inserir dados
+INSERT INTO alunos (nome, idade, email)
+VALUES ('Carlos', 18, 'carlos@gmail.com');
+
+-- Atualizar dados
+UPDATE alunos
+SET idade = 25
+WHERE id = 1;
+
+-- Excluir dados
+DELETE FROM alunos
+WHERE id = 1;</code></pre>
+
+            <h2>4. Consultas (SELECT)</h2>
+            <p>Utilizadas para visualizar e filtrar informações.</p>
+
+            <pre><code>-- Mostrar todos os dados
+SELECT * FROM alunos;
+
+-- Filtrar dados
+SELECT * FROM alunos
+WHERE idade > 18;
+
+-- Ordenar resultados
+SELECT * FROM alunos
+ORDER BY nome ASC;
+
+-- Limitar resultados
+SELECT * FROM alunos
+LIMIT 5;</code></pre>
+
+            <h2>5. Junção de Tabelas (JOIN)</h2>
+            <p>Usado para relacionar tabelas através de chaves estrangeiras.</p>
+
+            <pre><code>SELECT alunos.nome, cursos.nome
+FROM alunos
+INNER JOIN cursos
+ON alunos.curso_id = cursos.id;</code></pre>
+
+            <ul>
+                <li><strong>INNER JOIN:</strong> retorna registros relacionados.</li>
+                <li><strong>LEFT JOIN:</strong> retorna todos os registros da tabela esquerda.</li>
+            </ul>
+
+            <h2>6. Funções Importantes</h2>
+            <p>Funções utilizadas em análises e relatórios.</p>
+
+            <pre><code>-- Contar registros
+SELECT COUNT(*) FROM alunos;
+
+-- Média
+SELECT AVG(idade) FROM alunos;
+
+-- Maior valor
+SELECT MAX(idade) FROM alunos;
+
+-- Menor valor
+SELECT MIN(idade) FROM alunos;</code></pre>
+
+            <h2>7. Filtros e Operadores</h2>
+            <p>Permitem buscas mais específicas.</p>
+
+            <pre><code>-- LIKE
+SELECT * FROM alunos
+WHERE nome LIKE 'A%';
+
+-- IN
+SELECT * FROM alunos
+WHERE idade IN (18, 20, 22);
+
+-- BETWEEN
+SELECT * FROM alunos
+WHERE idade BETWEEN 18 AND 25;</code></pre>
+
+            <h2>8. GROUP BY e HAVING</h2>
+            <p>Utilizados para agrupamento de registros.</p>
+
+            <pre><code>SELECT curso_id, COUNT(*) AS total
+FROM alunos
+GROUP BY curso_id
+HAVING total > 5;</code></pre>
+
+            <h2>9. Dicas da Linguagem</h2>
+
+            <ul>
+                <li>Sempre utilize <code>WHERE</code> em <code>UPDATE</code> e <code>DELETE</code>.</li>
+                <li>Use nomes claros nas tabelas e colunas.</li>
+                <li>Evite usar <code>SELECT *</code> em sistemas grandes.</li>
+                <li>Crie índices em colunas frequentemente pesquisadas.</li>
+            </ul>
+
+            <pre><code>CREATE INDEX idx_email
+ON alunos(email);</code></pre>
+
+            <h2>10. Conceitos Avançados</h2>
+
+            <h3>Views</h3>
+            <pre><code>CREATE VIEW vw_alunos AS
+SELECT nome, idade
+FROM alunos;</code></pre>
+
+            <h3>Transactions</h3>
+            <pre><code>START TRANSACTION;
+
+UPDATE contas
+SET saldo = saldo - 100
+WHERE id = 1;
+
+COMMIT;</code></pre>
+
+            <h2>11. Ordem Recomendada de Aprendizado</h2>
+
+            <ol>
+                <li>CREATE DATABASE</li>
+                <li>CREATE TABLE</li>
+                <li>INSERT</li>
+                <li>SELECT</li>
+                <li>WHERE</li>
+                <li>UPDATE</li>
+                <li>DELETE</li>
+                <li>JOIN</li>
+                <li>GROUP BY</li>
+                <li>Transactions</li>
+            </ol>
         </div>
     </main>
 
@@ -59,5 +198,5 @@ INNER JOIN pedidos ON usuarios.id = pedidos.usuario_id;</code></pre>
 
     <script src="../script.js"></script>
 </body>
-</html>
 
+</html>

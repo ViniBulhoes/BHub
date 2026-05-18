@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BHub | Estudos - MySQL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="bg-gradient-sphere"></div>
+    <div class="bg-gradient-sphere two"></div>
+
+    <header>
+        <div class="logo">B<span class="gradient-text">Hub</span></div>
+    </header>
+
+    <main>
+        <a href="../index.html#studies" class="btn-back">
+            <i class="fa-solid fa-arrow-left"></i> Voltar para os Estudos
+        </a>
+
+        <div class="note-content">
+            <h1>MySQL Avançado</h1>
+            <p>Sistema de Gerenciamento de Banco de Dados Relacional. Base fundamental para arquitetura e persistência
+                de dados consistentes.</p>
+
+            <h2>1. Comandos Essenciais (CRUD)</h2>
+            <pre><code>-- CREATE
+INSERT INTO usuarios (nome, email) VALUES ('Vinícius', 'vini@email.com');
+
+-- READ
+SELECT nome, email FROM usuarios WHERE id = 1;
+
+-- UPDATE
+UPDATE usuarios SET nome = 'Vini' WHERE id = 1;
+
+-- DELETE
+DELETE FROM usuarios WHERE id = 1;</code></pre>
+
+            <h2>2. Joins Relacionais</h2>
+            <p>Usados para combinar linhas de duas ou mais tabelas baseadas em uma coluna comum.</p>
+            <ul>
+                <li><strong>INNER JOIN:</strong> Retorna registros que têm valores correspondentes em ambas as tabelas.
+                </li>
+                <li><strong>LEFT JOIN:</strong> Retorna todos os registros da tabela da esquerda e os correspondentes da
+                    direita.</li>
+            </ul>
+            <pre><code>SELECT usuarios.nome, pedidos.total
+FROM usuarios
+INNER JOIN pedidos ON usuarios.id = pedidos.usuario_id;</code></pre>
+
+            <h2>3. Índices (Indexes)</h2>
+            <p>Índices melhoram drasticamente a velocidade das consultas SELECT (mas deixam INSERTs/UPDATEs mais
+                lentos). Use em colunas frequentemente usadas no <code>WHERE</code>.</p>
+            <pre><code>CREATE INDEX idx_email ON usuarios(email);</code></pre>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 BHub. Desenvolvido com foco e cafeína.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
